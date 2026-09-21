@@ -1,0 +1,15 @@
+[Unit]
+Description=test-app application monitoring
+After=network-online.target
+
+[Service]
+Type=simple
+Execstart= /usr/bin/python3 /home/dibia/projects/test-app-monitor/app.py
+Restart=always
+StartBurstLimitIntervalSec=1min
+StartLimitBurst=3
+StandardError=journal
+StnadardOutput=journal
+User=dibia
+Group=dibia
+[Instxall]
